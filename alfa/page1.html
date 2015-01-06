@@ -1,0 +1,24 @@
+<ons-page>
+	<ons-toolbar>
+		<div class="center">Navigator</div>
+	</ons-toolbar>
+
+	<div style="text-align: center">
+		<center ng-controller="MainCtrl">
+			<h1>
+				{{bobotoh}} {{beringas}}
+			</h1>
+			<br/>
+			<h4>
+				Please kindly enter your name:
+			</h4>
+			<input type="text" placeholder="name" ng-model="bobotoh"/>
+		</center>
+		<br>
+		<ons-button
+				onclick="myNavigator.pushPage('page2.html')">
+			Push Page 2
+		</ons-button>
+	</div>
+
+</ons-page>
