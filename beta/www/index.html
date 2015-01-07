@@ -8,53 +8,56 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="components/monaca-onsenui/css/onsenui.css">
     <link rel="stylesheet" href="components/monaca-onsenui/css/onsen-css-components.css">
+    <!--
+	<script src="components/monaca-onsenui/js/angular/angular.min.js"></script>
+	<script src="components/monaca-onsenui/js/angular/angular-animate.js"></script>
+	<script src="components/monaca-onsenui/js/angular/angular-touch.js"></script>
+	<script src="components/monaca-onsenui/js/angular/angular-csp.css"></script>
+	<script src="components/monaca-onsenui/js/onsenui_all.min.js"></script>
+	  -->
+
+    <script src="app.js"></script>
     <script>
-        ons.bootstrap();
         ons.disableAutoStatusBarFill();  // (Monaca enables StatusBar plugin by default)
     </script>
 </head>
-<body>
-<ons-navigator var="myNavigator" page="page1.html">
+
+<body ng-controller="AppCtrl">
+<ons-navigator var="myNavigator" page="tpa.html">
 </ons-navigator>
-</body>
-</html>
-
-<ons-template>
-    <ons-page>
+<ons-template id="tpa.html">
+    <ons-page ng-controller="MainCtrl">
         <ons-toolbar>
-            <br/>
-
-            <div class="center">Navigator</div>
+            <br/><br/>
+            <div class="center">{{page.title}}</div>
         </ons-toolbar>
-
-        <div style="text-align: center">
-            <br>
-            <ons-button
-                    onclick="myNavigator.pushPage('page2.html')">
-                Push Page 2
-            </ons-button>
-        </div>
-
     </ons-page>
 </ons-template>
 
-<ons-template>
+<ons-template id="english.html">
     <ons-page>
         <ons-toolbar>
             <div class="left">
                 <ons-back-button>Back</ons-back-button>
             </div>
-            <div class="center">Page 2</div>
+            <br/>
+
+            <div class="center">English</div>
         </ons-toolbar>
 
         <div style="text-align: center">
 
-            <h1>Page 2</h1>
-            <ons-button
-                    onclick="myNavigator.popPage()">
+            <h4>
+                {{page.defs}}
+            </h4>
+            <ons-button ng-click="myNavigator.popPage()">
                 Pop Page
             </ons-button>
 
         </div>
     </ons-page>
 </ons-template>
+</body>
+</html>
+
+
