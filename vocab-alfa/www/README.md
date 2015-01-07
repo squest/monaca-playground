@@ -1,4 +1,4 @@
-# Getting Started to Onsen UI Minimum Template
+# Getting Started to Onsen UI Tab Bar
 
 This template is using Onsen UI, a HTML5 framework that is focusing on the speed and ease of use.
 For details, please check out [Onsen UI Website](http://onsenui.io) and [its documents](http://onsenui.io/guide/overview.html).
@@ -30,8 +30,22 @@ Here is the code snippet that you can copy & paste for quicker setup.
     </script>
 </head>
 <body>
-    <ons-navigator var="myNavigator" page="page1.html">
-    </ons-navigator> 
+    <ons-tabbar var="tabbar">
+        <ons-tabbar-item
+            icon="home"
+            label="Home"
+            page="navigator.html"
+            active="true"></ons-tabbar-item>
+        <ons-tabbar-item
+            icon="comment"
+            label="Comments"
+            page="page2.html"></ons-tabbar-item>
+        <ons-tabbar-item
+            icon="gear"
+            label="Settings"
+            page="page3.html"></ons-tabbar-item>
+    </ons-tabbar>
+
 </body>
 </html>
 ```

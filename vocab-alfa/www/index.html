@@ -6,19 +6,31 @@
     <script src="components/loader.js"></script>
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="components/monaca-onsenui/css/onsenui.css">
-    <link rel="stylesheet" href="components/monaca-onsenui/css/onsen-css-components.css">
-    <!--
-  <script src="components/monaca-onsenui/js/angular/angular.min.js"></script>
-	<script src="components/monaca-onsenui/js/angular/angular-animate.js"></script>
-	<script src="components/monaca-onsenui/js/angular/angular-touch.js"></script>
-	<script src="components/monaca-onsenui/js/angular/angular-csp.css"></script>
-	<script src="components/monaca-onsenui/js/onsenui_all.min.js"></script>
-	  -->
-
-    <script src="app.js"></script>
     <script>
+        ons.bootstrap();
         ons.disableAutoStatusBarFill();  // (Monaca enables StatusBar plugin by default)
+    </script>
+</head>
+<body>
+    <ons-tabbar var="tabbar">
+        <ons-tabbar-item
+            icon="home"
+            label="Home"
+            page="navigator.html"
+            active="true"></ons-tabbar-item>
+        <ons-tabbar-item
+            icon="comment"
+            label="Comments"
+            page="page2.html"></ons-tabbar-item>
+        <ons-tabbar-item
+            icon="gear"
+            label="Settings"
+            page="page3.html"></ons-tabbar-item>
+    </ons-tabbar>
+
+</body>
+</html>
+s.disableAutoStatusBarFill();  // (Monaca enables StatusBar plugin by default)
     </script>
 </head>
 
@@ -40,7 +52,7 @@
 
         <ons-list>
             <ons-list-header>Available drills</ons-list-header>
-            <ons-list-item modifier="chevron">
+            <ons-list-item modifier="chevron" ng-click="getPage('drills-tpa1')">
                 <ons-icon icon="fa-bolt" size="20px"></ons-icon>
                 SBMPTN TPA Part I
             </ons-list-item>
@@ -65,6 +77,10 @@
                 SBMPTN English Root words
             </ons-list-item>
 
+            <ons-list-item modifier="chevron">
+                Scores and Ranks
+            </ons-list-item>
+
             <ons-list-header>Zenius Account Management</ons-list-header>
 
             <ons-list-item modifier="chevron">
@@ -73,29 +89,41 @@
             </ons-list-item>
 
             <ons-list-item modifier="chevron">
-                <ons-icon icon="fa-music" size="20px"></ons-icon>
-                My Music
-                <span class="list-item-note lucent">Anatoo Samba</span>
+                <ons-icon icon="fa-dollar" size="20px"></ons-icon>
+                Beli voucher
             </ons-list-item>
 
             <ons-list-item modifier="chevron">
                 <ons-icon icon="fa-gamepad" size="20px"></ons-icon>
-                My Game
-                <span class="list-item-note lucent">Onsen UI Bros.</span>
+                Aktivasi voucher
+
             </ons-list-item>
 
+            <ons-list-header>Updates</ons-list-header>
+            <ons-list-item modifier="chevron">
+                <ons-icon icon="fa-twitter"></ons-icon>
+                Zenius Education tweets
+            </ons-list-item>
+            <ons-list-item modifier="chevron">
+                <ons-icon icon="fa-twitter"></ons-icon>
+                Zenius English tweets
+            </ons-list-item>
+            <ons-list-item modifier="chevron">
+                <ons-icon icon="fa-cloud"></ons-icon>
+                Zenius.net website
+            </ons-list-item>
+            <ons-list-item modifier="chevron">
+                <ons-icon icon="fa-cloud"></ons-icon>
+                Zenius English website
+            </ons-list-item>
 
         </ons-list>
 
-        <ons-bottom-toolbar>
-            <div style="text-align: center; line-height: 44px">
-                Manage your zenius account here
-            </div>
-        </ons-bottom-toolbar>
+
     </ons-page>
 </ons-template>
 
-<ons-template id="english.html">
+<ons-template id="drill-tpa1.html" ng-controller="DrillCtrl">
     <ons-page>
         <ons-toolbar>
             <div class="left">
@@ -103,19 +131,35 @@
             </div>
             <br/>
 
-            <div class="center">English</div>
+            <div class="center">TPA drills I</div>
         </ons-toolbar>
-
-        <div style="text-align: center">
-
-            <h4>
-                {{page.defs}}
-            </h4>
-            <ons-button ng-click="myNavigator.popPage()">
-                Pop Page
-            </ons-button>
-
+        <div class="profile-card center">
+            What is the closest definition of
+            {{currentSoal.w}}
         </div>
+        <ons-list-header>
+            Choices:
+        </ons-list-header>
+        <ul class="list">
+            <li ng-repeat="choice in answerChoices" class="list__item list__item--tappable">
+                <label class="radio-button radio-button--list-item">
+                    <input type="radio" name="b" checked="false">
+
+                    <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+                    choice.d
+                </label>
+            </li>
+
+        </ul>
+
+    </ons-page>
+</ons-template>
+</body>
+</html>
+
+
+         </li>
+        </ul>
     </ons-page>
 </ons-template>
 </body>

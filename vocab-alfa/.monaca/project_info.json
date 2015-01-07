@@ -5,8 +5,8 @@
         "org.apache.cordova.statusbar"
     ],
     "framework_version": "3.5",
-    "xcode_version": "5",
-    "title-ja": "",
+    "xcode_version": "5"
+}    "title-ja": "",
     "title-en": "beta",
     "description-ja": "",
     "description-en": "",

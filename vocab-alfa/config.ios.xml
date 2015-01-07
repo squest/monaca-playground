@@ -27,5 +27,5 @@
   <preference name="monaca:targetFamilyiPhone" value="1"/>
   <preference name="monaca:targetFamilyiPad" value="1"/>
   <preference name="monaca:DisableCookie" value="false"/>
-  <preference name="monaca:iosApplicationName" value="Zen vocab"/>
+  <preference name="monaca:iosApplicationName" value="Zen Vocab"/>
 </widget>
