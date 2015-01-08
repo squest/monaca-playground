@@ -6,163 +6,32 @@
     <script src="components/loader.js"></script>
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="components/monaca-onsenui/css/onsen-css-components-dark-theme.css"/>
+    <link rel="stylesheet" href="components/monaca-onsenui/css/ionicons/css/ionicons.min.css"/>
+    <script src="app.js"></script>
     <script>
-        ons.bootstrap();
         ons.disableAutoStatusBarFill();  // (Monaca enables StatusBar plugin by default)
     </script>
 </head>
 <body>
-    <ons-tabbar var="tabbar">
-        <ons-tabbar-item
+<ons-tabbar var="tabbar">
+    <ons-tabbar-item
             icon="home"
             label="Home"
             page="navigator.html"
-            active="true"></ons-tabbar-item>
-        <ons-tabbar-item
+            active="true">
+    </ons-tabbar-item>
+    <ons-tabbar-item
             icon="comment"
             label="Comments"
-            page="page2.html"></ons-tabbar-item>
-        <ons-tabbar-item
-            icon="gear"
+            page="zenius-account.html">
+    </ons-tabbar-item>
+    <ons-tabbar-item
+            icon="home"
             label="Settings"
-            page="page3.html"></ons-tabbar-item>
-    </ons-tabbar>
+            page="ranks.html">
+    </ons-tabbar-item>
+</ons-tabbar>
 
 </body>
 </html>
-s.disableAutoStatusBarFill();  // (Monaca enables StatusBar plugin by default)
-    </script>
-</head>
-
-<body ng-controller="AppCtrl">
-<ons-navigator var="navi" page="main.html">
-</ons-navigator>
-
-<ons-template id="main.html">
-    <ons-page ng-controller="MainCtrl">
-        <ons-toolbar>
-            <div class="center">
-                Zenius Vocab drills
-            </div>
-        </ons-toolbar>
-
-        <div class="profile-card center">
-            <img src="images/zenius.jpg" alt="zenius logo" width="70" height="80" class="profile-image"/>
-        </div>
-
-        <ons-list>
-            <ons-list-header>Available drills</ons-list-header>
-            <ons-list-item modifier="chevron" ng-click="getPage('drills-tpa1')">
-                <ons-icon icon="fa-bolt" size="20px"></ons-icon>
-                SBMPTN TPA Part I
-            </ons-list-item>
-
-            <ons-list-item modifier="chevron">
-                <ons-icon icon="fa-bolt" size="20px"></ons-icon>
-                SBMPTN TPA Part II
-            </ons-list-item>
-
-            <ons-list-item modifier="chevron">
-                <ons-icon icon="fa-plane" size="20px"></ons-icon>
-                SBMPTN English basic
-            </ons-list-item>
-
-            <ons-list-item modifier="chevron">
-                <ons-icon icon="fa-plane" size="20px"></ons-icon>
-                SBMPTN English intermediate
-            </ons-list-item>
-
-            <ons-list-item modifier="chevron">
-                <ons-icon icon="fa-plane" size="20px"></ons-icon>
-                SBMPTN English Root words
-            </ons-list-item>
-
-            <ons-list-item modifier="chevron">
-                Scores and Ranks
-            </ons-list-item>
-
-            <ons-list-header>Zenius Account Management</ons-list-header>
-
-            <ons-list-item modifier="chevron">
-                <ons-icon icon="fa-users" size="20px"></ons-icon>
-                Logout and switch user
-            </ons-list-item>
-
-            <ons-list-item modifier="chevron">
-                <ons-icon icon="fa-dollar" size="20px"></ons-icon>
-                Beli voucher
-            </ons-list-item>
-
-            <ons-list-item modifier="chevron">
-                <ons-icon icon="fa-gamepad" size="20px"></ons-icon>
-                Aktivasi voucher
-
-            </ons-list-item>
-
-            <ons-list-header>Updates</ons-list-header>
-            <ons-list-item modifier="chevron">
-                <ons-icon icon="fa-twitter"></ons-icon>
-                Zenius Education tweets
-            </ons-list-item>
-            <ons-list-item modifier="chevron">
-                <ons-icon icon="fa-twitter"></ons-icon>
-                Zenius English tweets
-            </ons-list-item>
-            <ons-list-item modifier="chevron">
-                <ons-icon icon="fa-cloud"></ons-icon>
-                Zenius.net website
-            </ons-list-item>
-            <ons-list-item modifier="chevron">
-                <ons-icon icon="fa-cloud"></ons-icon>
-                Zenius English website
-            </ons-list-item>
-
-        </ons-list>
-
-
-    </ons-page>
-</ons-template>
-
-<ons-template id="drill-tpa1.html" ng-controller="DrillCtrl">
-    <ons-page>
-        <ons-toolbar>
-            <div class="left">
-                <ons-back-button>Back</ons-back-button>
-            </div>
-            <br/>
-
-            <div class="center">TPA drills I</div>
-        </ons-toolbar>
-        <div class="profile-card center">
-            What is the closest definition of
-            {{currentSoal.w}}
-        </div>
-        <ons-list-header>
-            Choices:
-        </ons-list-header>
-        <ul class="list">
-            <li ng-repeat="choice in answerChoices" class="list__item list__item--tappable">
-                <label class="radio-button radio-button--list-item">
-                    <input type="radio" name="b" checked="false">
-
-                    <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
-                    choice.d
-                </label>
-            </li>
-
-        </ul>
-
-    </ons-page>
-</ons-template>
-</body>
-</html>
-
-
-         </li>
-        </ul>
-    </ons-page>
-</ons-template>
-</body>
-</html>
-
-
